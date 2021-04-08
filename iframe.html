@@ -4,12 +4,21 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Matterport Installation Demo</title>
   <meta name="description" content="Matterport Installation Demo">
   <meta name="author" content="rgarro">
 
 </head>
 <body>
-  <iframe id="showcase" width="740" height="480" src="/bundle/showcase.html?m=JUUpSQrQqgA" frameborder="0" allowfullscreen ></iframe>
+  <iframe id="showcase"  onload="iframeLoaded();" width="740" height="480" src="/bundle/showcase.html?m=6weCzmk8Jf8" frameborder="0" allowfullscreen ></iframe>
+<script type="text/javascript">
+function iframeLoaded(){
+  console.log("iframe is loaded");
+}
+window.onload=function(){
+ console.log("window is loaded");
+}
+</script>
+
 </body>
 </html>
