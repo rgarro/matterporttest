@@ -45,6 +45,8 @@
   </style>
   <link rel='stylesheet' href='css/showcase.css'>
   <link rel='stylesheet' href='css/unsupported_browser.css'>
+  <script src='js/browser-check.js'></script>
+  <script src='js/showcase.js'></script>
 </head>
 
 <body class='showcase'>
@@ -59,7 +61,7 @@
 <div id='unsupported-browser' class='hidden'>
 </div>
 <section id='app-container'>
-  
+
 <main>
   <div id='canvas-container'>
     <div id='control-kit-wrapper'></div>
@@ -91,18 +93,27 @@
 
 </section>
 
-<script src='js/browser-check.js'></script>
-<script src='js/showcase.js'></script>
-<script>
-  var detailObject = {
+
+<script onload="doOnLoad()">
+console.log("noon lunch break");
+function doOnLoad(){
+  /*var detailObject = {
     config: {"apiHost":"https://my.matterport.com","pointerPreventDefault":false}
   };
+  doBrowserCheck(detailObject);*/
+}
 
+funtion doBrowserCheck(detailObject){
   if (mpBrowserCheck.supported()) {
     window.dispatchEvent(new CustomEvent('app-start', { detail: detailObject }));
   } else {
     mpBrowserCheck.displayErrorPage();
   }
+}
+
+
+
+
 </script>
 </body>
 </html>
