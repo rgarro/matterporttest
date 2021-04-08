@@ -11,5 +11,25 @@
 </head>
 <body>
   <iframe id="showcase" width="740" height="480" src="/bundle/showcase.html?m=oHB9A8XsRo9" frameborder="0" allowfullscreen ></iframe>
+<script type="text/javascript">
+  window.onload=function(){
+console.log("debugging here ....");
+    var showcase = document.getElementById('showcase');
+console.log(showcase);    
+    showcase.addEventListener('load', async function() {
+console.log("showcase loaded ...");
+      let sdk;
+      try {
+        sdk = await showcase.contentWindow.MP_SDK.connect(showcase, '', '3.9');
+      } catch(e) {
+          console.error(e);
+          return;
+        }
+
+        console.log('Hello Bundle SDK', sdk);
+});
+  }
+</script>>
+
 </body>
 </html>
