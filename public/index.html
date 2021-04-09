@@ -10,13 +10,26 @@
 
 </head>
 <body>
-  <iframe id="showcase"  onload="iframeLoaded();" width="740" height="480" src="/bundle/showcase.html?m=6weCzmk8Jf8" frameborder="0" allowfullscreen ></iframe>
+  <iframe id="showcase"  width="740" height="480" src="/bundle/showcase.html?m=6weCzmk8Jf8" frameborder="0" allowfullscreen ></iframe>
 <script type="text/javascript">
-function iframeLoaded(){
-  console.log("iframe is loaded");
-}
+var showcase = document.getElementById('showcase');
+showcase.addEventListener('load', async function() {
+console.log("frame loaded ...");
+    let sdk;
+    try {
+      sdk = await showcase.contentWindow.MP_SDK.connect(showcase, 'hxdsz06gifrgmb0921kxs04aa', '3.9');
+console.log(sdk);      
+    } catch (e) {
+  console.log("error ...");
+        console.error(e);
+        return;
+      }
+      console.log(sdk);
+      console.log('Hello Bundle SDK', sdk);
+  });
+
 window.onload=function(){
- console.log("window is loaded");
+ //console.log("window is loaded");
 }
 </script>
 
