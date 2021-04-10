@@ -12,13 +12,13 @@
 <body>
   <iframe id="showcase"  width="740" height="480" src="/bundle/showcase.html?m=6weCzmk8Jf8" frameborder="0" allowfullscreen ></iframe>
 <script type="text/javascript">
-var showcase = document.getElementById('showcase');
+var showcase = document.getElementById('showcase') as HTMLIFrameElement;
 showcase.addEventListener('load', async function() {
 console.log("frame loaded ...");
     let sdk;
     try {
       sdk = await showcase.contentWindow.MP_SDK.connect(showcase, 'hxdsz06gifrgmb0921kxs04aa', '3.9');
-console.log(sdk);      
+console.log(sdk);
     } catch (e) {
   console.log("error ...");
         console.error(e);
