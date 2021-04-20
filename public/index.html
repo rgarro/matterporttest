@@ -21,6 +21,7 @@ console.log("frame loaded ...");
     let sdk;
     try {
       sdk = await showcase.contentWindow.MP_SDK.connect(showcase, 'hxdsz06gifrgmb0921kxs04aa', '3.9');
+      console.log("sdk detail");
 console.log(sdk);
     } catch (e) {
   console.log("error ...");
